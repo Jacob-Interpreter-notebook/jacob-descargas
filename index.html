@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jacob · Descargar</title>
+<meta name="description" content="Jacob: asistente de interpretación inglés ↔ español en vivo para intérpretes telefónicos. Descarga para Windows.">
+<link rel="icon" href="img/jacob.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0b1a2e; --navy-2:#13294a; --blue:#1e88e5; --blue-d:#1565c0;
+  --ink:#14202e; --muted:#5b6b7d; --line:#e3e8ef; --bg:#f6f8fb; --card:#ffffff;
+  --ok:#15803d; --warn-bg:#fff7e6; --warn-line:#f3d29b;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--ink);background:var(--bg);line-height:1.55;font-size:16px}
+a{color:var(--blue-d)}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+/* hero */
+.hero{background:radial-gradient(1200px 500px at 80% -10%,#1d4f8f 0%,transparent 60%),linear-gradient(160deg,var(--navy) 0%,var(--navy-2) 100%);color:#fff;padding:28px 0 0;overflow:hidden}
+.top{display:flex;align-items:center;gap:12px}
+.top img{width:44px;height:44px;border-radius:12px}
+.top b{font-size:20px;letter-spacing:.2px}
+.hero-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:40px;align-items:center;padding:44px 0 56px}
+h1{font-size:44px;line-height:1.1;margin:0 0 16px;font-weight:800;letter-spacing:-.6px}
+.lead{font-size:18px;color:#c9d6e6;margin:0 0 28px;max-width:520px}
+.btn{display:inline-flex;align-items:center;gap:12px;background:var(--blue);color:#fff;text-decoration:none;font-weight:700;font-size:18px;padding:16px 26px;border-radius:14px;box-shadow:0 10px 30px rgba(30,136,229,.35);transition:transform .15s ease,background .15s ease}
+.btn:hover{background:#2196f3;transform:translateY(-1px)}
+.btn svg{width:22px;height:22px}
+.meta{margin-top:14px;font-size:14px;color:#9fb3c8}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.chip{font-size:13px;color:#dbe6f3;border:1px solid rgba(255,255,255,.18);border-radius:999px;padding:6px 12px}
+.shot{border-radius:14px;overflow:hidden;box-shadow:0 30px 70px rgba(0,0,0,.45);border:1px solid rgba(255,255,255,.12);background:#fff}
+.shot img{display:block;width:100%;height:auto}
+/* sections */
+section{padding:56px 0}
+h2{font-size:28px;margin:0 0 8px;letter-spacing:-.3px}
+.sub{color:var(--muted);margin:0 0 28px}
+.steps{counter-reset:s;display:grid;gap:14px;padding:0;margin:0;list-style:none}
+.steps li{counter-increment:s;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px 18px 66px;position:relative}
+.steps li::before{content:counter(s);position:absolute;left:20px;top:18px;width:30px;height:30px;border-radius:50%;background:var(--navy);color:#fff;font-weight:700;display:grid;place-items:center;font-size:15px}
+.steps b{display:block;margin-bottom:2px}
+.steps p{margin:0;color:var(--muted)}
+.steps code,.mono{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:.92em;background:#eef2f7;border-radius:6px;padding:1px 6px;color:var(--ink)}
+.note{background:var(--warn-bg);border:1px solid var(--warn-line);border-radius:12px;padding:12px 14px;margin-top:10px;color:#6b4a07;font-size:15px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px}
+.card h3{margin:0 0 6px;font-size:17px}
+.card p{margin:0;color:var(--muted);font-size:15px}
+.priv{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.priv ul{margin:0;padding:0;list-style:none;display:grid;gap:12px}
+.priv li{padding-left:30px;position:relative}
+.priv li::before{content:"";position:absolute;left:0;top:4px;width:18px;height:18px;border-radius:50%;background:#e6f4ea url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2315803d' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12l5 5 9-10'/%3E%3C/svg%3E") center/12px no-repeat}
+.req{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.req div{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;font-size:15px}
+.req small{display:block;color:var(--muted);font-size:13px}
+.cta{text-align:center}
+.cta .btn{margin-top:8px}
+footer{color:var(--muted);font-size:14px;padding:28px 0 40px;text-align:center}
+footer .mono{font-size:12px;word-break:break-all}
+@media (max-width:860px){
+  .hero-grid{grid-template-columns:1fr;gap:28px;padding:30px 0 40px}
+  h1{font-size:34px}
+  .grid3,.req{grid-template-columns:1fr 1fr}
+}
+@media (max-width:520px){
+  .wrap{padding:0 16px}
+  h1{font-size:30px}
+  .lead{font-size:16px}
+  .btn{width:100%;justify-content:center}
+  .grid3,.req{grid-template-columns:1fr}
+  section{padding:40px 0}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="top"><img src="img/jacob.png" alt=""><b>Jacob</b></div>
+    <div class="hero-grid">
+      <div>
+        <h1>Tu asistente de interpretación, en vivo</h1>
+        <p class="lead">Jacob escucha la llamada en tu pestaña de Chrome y te muestra al instante lo que se dijo en inglés y en español, con su traducción, los datos dictados y el motivo de la llamada.</p>
+        <a class="btn" href="Jacob-Setup.exe" download>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0l-5-5m5 5l5-5M4 19h16"/></svg>
+          Descargar para Windows
+        </a>
+        <div class="meta">Versión 3.1.2 · 87 MB · Windows 10 y 11 (64 bits)</div>
+        <div class="chips">
+          <span class="chip">Médicas · 911 · legales · seguros</span>
+          <span class="chip">No usa tu micrófono</span>
+          <span class="chip">No guarda la conversación</span>
+        </div>
+      </div>
+      <div class="shot"><img src="img/jacob-llamada.jpg" alt="Jacob durante una llamada de ejemplo: frases en inglés y en español con su traducción, y el expediente con fecha de nacimiento, teléfono e indicaciones del médico" width="1120" height="780"></div>
+    </div>
+  </div>
+</header>
+
+<main>
+<section>
+  <div class="wrap">
+    <h2>Instálalo en 5 pasos</h2>
+    <p class="sub">Unos 10 minutos, una sola vez. No necesitas permisos de administrador.</p>
+    <ol class="steps">
+      <li><b>Descarga y abre el instalador</b><p>Pulsa el botón de arriba y abre <code>Jacob-Setup.exe</code> cuando termine la descarga.</p>
+        <div class="note"><strong>Si Windows dice "Windows protegió su PC":</strong> pulsa <strong>Más información</strong> y luego <strong>Ejecutar de todos modos</strong>. Aparece porque Jacob es un programa nuevo que aún no tiene firma digital de Microsoft.</div></li>
+      <li><b>Termina la instalación</b><p>Jacob queda en el escritorio y en el menú Inicio.</p></li>
+      <li><b>Agrega la extensión a Chrome</b><p>En Chrome escribe <code>chrome://extensions</code>, activa <strong>Modo de desarrollador</strong> (arriba a la derecha), pulsa <strong>Cargar descomprimida</strong> y elige la carpeta de la extensión. Para encontrarla, busca en el menú Inicio <strong>"Jacob - carpeta de la extensión de Chrome"</strong>.</p></li>
+      <li><b>Escribe tu código</b><p>Abre Jacob, entra en <strong>Ajustes</strong> y pega tu código de acceso (<span class="mono">JACOB-XXXX-XXXX</span>).</p></li>
+      <li><b>Empieza tu llamada</b><p>Pulsa <strong>Iniciar</strong> en Jacob. En la pestaña de la llamada, pulsa el icono de Jacob en Chrome y luego <strong>Capturar esta pestaña</strong>.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <h2>Lo que hace por ti</h2>
+    <p class="sub">Pensado para intérpretes telefónicos que pasan el día en llamadas.</p>
+    <div class="grid3">
+      <div class="card"><h3>Traducción al instante</h3><p>Cada frase aparece con su traducción uno o dos segundos después de que la persona termina de hablar.</p></div>
+      <div class="card"><h3>Datos sin perder ni uno</h3><p>Fechas de nacimiento, teléfonos, direcciones y números de expediente quedan anotados y marcados si alguien los corrige.</p></div>
+      <div class="card"><h3>Expediente de la llamada</h3><p>Motivo de la llamada, indicaciones del médico y preguntas que nadie respondió, a un lado de la conversación.</p></div>
+      <div class="card"><h3>Habla de la región</h3><p>Reconoce expresiones de Puerto Rico, México, Honduras, El Salvador y Venezuela y te dice qué pueden significar.</p></div>
+      <div class="card"><h3>Se adapta a cada voz</h3><p>Aprende durante la llamada cómo hace pausas cada persona para no cortar frases a la mitad.</p></div>
+      <div class="card"><h3>Cuida tus horas</h3><p>Solo descuenta tiempo mientras escucha, y se pausa solo si la llamada termina o nadie habla.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="priv">
+  <div class="wrap">
+    <h2>Privacidad</h2>
+    <p class="sub">Lo que pasa con el audio de tus llamadas.</p>
+    <ul>
+      <li><strong>No guarda la conversación en tu equipo.</strong> Ni audio, ni texto, ni traducciones. Al cerrar Jacob, el expediente desaparece.</li>
+      <li><strong>No usa tu micrófono.</strong> Solo oye lo que suena en la pestaña de la llamada; tu propia voz no pasa por Jacob.</li>
+      <li><strong>El audio viaja cifrado</strong> al servidor de Jacob, que lo pasa a Groq para transcribirlo y traducirlo. El servidor de Jacob no guarda audio ni texto: solo tu código, tu equipo y los minutos usados.</li>
+      <li><strong>Jacob te ayuda, no te reemplaza.</strong> La interpretación sigue siendo tuya. Jacob no está certificado para HIPAA: revisa las reglas de tu agencia antes de usarlo.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Requisitos</h2>
+    <p class="sub">Funciona incluso en equipos sencillos: lo probamos en un Celeron con 4 GB de RAM.</p>
+    <div class="req">
+      <div>Windows 10 u 11<small>64 bits</small></div>
+      <div>Google Chrome<small>con la llamada en una pestaña</small></div>
+      <div>Internet estable<small>durante la llamada</small></div>
+      <div>Código de acceso<small>JACOB-XXXX-XXXX</small></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <h2>¿Algo no funciona?</h2>
+    <p class="sub" style="margin-bottom:10px">Abre el menú Inicio, escribe <span class="mono">%LOCALAPPDATA%\InterpreterCopilot\logs</span> y pulsa Enter. Envía el archivo <span class="mono">interpreter-copilot.log</span> a quien te dio tu código, con una línea de lo que pasó. Ese archivo no contiene la conversación.</p>
+    <p class="sub">Si la extensión no captura, entra en <span class="mono">chrome://extensions</span>, recarga Jacob y vuelve a pulsar <strong>Capturar esta pestaña</strong>.</p>
+  </div>
+</section>
+
+<section class="cta" style="padding-top:0">
+  <div class="wrap">
+    <a class="btn" href="Jacob-Setup.exe" download>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0l-5-5m5 5l5-5M4 19h16"/></svg>
+      Descargar Jacob 3.1.2
+    </a>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    Jacob 3.1.2 para Windows · Para comprobar la descarga, su huella SHA-256 es:<br>
+    <span class="mono">af8c661948c753a1af7050805f009f392e8376bcc12d82c07267a3b87c19f58c</span>
+  </div>
+</footer>
+</body>
+</html>
